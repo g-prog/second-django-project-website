@@ -1,0 +1,76 @@
+{% extends 'bootstrapcdn.html' %}
+{% block title %}contacts{% endblock %}
+{% load static %}
+{%  block body %}
+
+
+
+<!--<h1>This is the latest contact page</h1>
+<p>This is our contact page</p>--->
+
+
+<figure>
+  <div class="fixed-wrap">
+    <div id="fixed">
+      <img class="transparent" src="{% static 'images/mac.png' %}">
+
+    </div>
+
+  </div>
+</figure>
+
+<div class="jumbotron">
+    <h1 class="display-4">This is our contact page!</h1>
+    <p class="lead">Contact us for your websites, web hosting etc</p>
+    <hr class="my-4">
+    <p>Be beautiful, be proud and be unique!</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+
+    
+
+
+   <!--Footer-->
+   <footer>
+    <div class="container-fluid padding">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="{% static 'images/logo.png' %}">
+        <hr class="light">
+        <p>+2348122213918</p>
+        <p>alaoadebukola6@gmail.com</p>
+        <p>Asaba, Delta state</p>
+
+      </div>
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Our Hours</h5>
+        <hr class="light">
+        <p>Mondays-Fridays: 8am-5pm</p>
+        <p>Saturdays: 9-2pm</p>
+        <p>Sundays: closed</p>
+      </div>
+
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Service Area</h5>
+        <hr class="light">
+        <p>Asaba, Delta state</p>
+        <p>Omoku, Rivers state</p>
+        <p>Ile-Ife, Osun state</p>
+      </div>
+
+      <div class="col-12">
+        <hr class="light-100">
+        <h5>&copy; w3newbie.com</h5>
+      
+
+      </div>
+   
+    </div>
+
+    </div>
+  </footer>
+  
+
+{% endblock %}

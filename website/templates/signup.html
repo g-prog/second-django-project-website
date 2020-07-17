@@ -1,0 +1,172 @@
+{% extends 'bootstrapcdn.html' %}
+{% block title %}Sign-up{% endblock %}
+
+{%  block body %}
+<form action="{% url 'register' %}" method="post">
+  {% csrf_token %}
+  <div class="form group">
+    <ul class = "messages">
+        {% for msg in messages %}
+     
+        <li>
+          <div class = "alert alert-{{msg.level_tag}}" role = "alert">
+             {{msg.message}}
+
+             
+             {% endfor %}
+     
+          </div>
+     
+        </li>
+    </ul>
+
+  <form>
+  <div class="row">
+    <div class="form-group col-xs-3 col-lg-5">
+      <label for="formGroupExampleInput">First Name</label>
+      <input type="text" class="form-control"  name= "first_name" id="formGroupExampleInput" placeholder="First Name">
+    </div>
+  </div>
+
+ <div class="row">
+    <div class="form-group col-xs-3 col-lg-5">
+      <label for="formGroupExampleInput">Last Name</label>
+      <input type="text" class="form-control"  name= "last_name" id="formGroupExampleInput" placeholder="Last name">
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-3 col-lg-5">
+      <label for="formGroupExampleInput">Username</label>
+      <input type="text" class="form-control"  name= "username" id="formGroupExampleInput" placeholder="username">
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="row">
+    <div class="form-group col-xs-3 col-lg-5">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" name="email" placeholder="e.g my@gmail.com" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-3 col-lg-5">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" name="password1" id="exampleInputPassword1">
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="form-group col-xs-3 col-lg-5">
+      <label for="exampleInputPassword1">Confirm Password</label>
+      <input type="password" class="form-control" name="password2" id="exampleInputPassword1">
+    </div>
+  </div>
+
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+  
+  </form>
+
+  <!--<input type="text" name="first_name" placeholder="First Name"><br>
+  <input type="text" name="last_name" placeholder="Last Name"><br>
+  <input type="text" name="username" placeholder="Username"><br>
+  <input type="email" name="email" placeholder="email"><br>
+  <input type="password" name="password1" placeholder="Password"><br>
+  <input type="password" name="password2" placeholder="Confirm Password"><br>
+  <input type="submit">-->
+
+</form>
+
+<div>
+  {% for message in messages %}
+  <h3> {{message}} </h3>
+  {% endfor %}
+</div>
+
+
+<!--<form method="POST" action="">
+  {% csrf_token %}
+  {{form.as_p}}
+
+  <input type="submit" name="Create user">
+
+</form>-->
+
+
+
+
+
+
+
+
+<!--<div class="container">
+ <h1>Sign-up Form</h1>
+
+ <ul class = "messages">
+   {% for msg in messages %}
+
+   <li>
+     <div class = "alert alert-{{msg.level_tag}}" role = "alert">
+        {{msg.message}}
+
+
+     </div>
+
+
+   </li>
+ 
+   {% endfor %}
+
+
+ </ul>
+
+<form action = "{% url 'addUser' %}" method="post">
+
+    {% csrf_token %}
+    <form>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Full Name</label>
+        {{form.full_name}}
+      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          
+          {{form.username}}
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          {{form.password}}
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            {{form.email}}
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Phone</label>
+            {{form.phone}}
+          </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>  
+
+</form>-->
+    
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+
+
+{% extends 'bootstrapcdn.html' %}
+{% block title %}Login{% endblock %}
+
+{%  block body %}
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <div class="form group">
+        <ul class = "messages">
+            {% for msg in messages %}
+         
+            <li>
+              <div class = "alert alert-{{msg.level_tag}}" role = "alert">
+                 {{msg.message}}
+    
+                 
+                 {% endfor %}
+         
+              </div>
+         
+            </li>
+        </ul>
+        <div class="row">
+            <div class="form-group col-xs-3 col-lg-5">
+              <label for="formGroupExampleInput">Username</label>
+              <input type="text" class="form-control"  name= "username" id="formGroupExampleInput" placeholder="username">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-xs-3 col-lg-5">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="password">
+                
+            </div>
+            
+        </div>
+        <input type="submit" class="btn btn-primary">
+        <p>Forgot Password?<a href="#">click here</a></p>  
+      
+</form>
+
+{% endblock %}
+
+
+
+
+
+
+

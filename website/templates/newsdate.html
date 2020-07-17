@@ -1,0 +1,75 @@
+{% extends 'bootstrapcdn.html' %}
+{% block title %}News archives{% endblock %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{%  block body %}
+
+
+
+<h1 style="color:purple;">News for Year {{year}}</h1>
+
+
+{% for news in article_list %}
+
+<img src="{{news.image.url}}"/>
+<h1 style="color:purple;">{{news.title}}</h1>
+<p>{{news.description}}</p>
+
+<h3 style="color:purple;">{{news.author}}</h3>
+
+
+<h4>{{news.pub_date}}</h4>
+<hr>
+
+<!--{{baseUrl}}/{{dest.img}}-->
+
+{% endfor %}
+
+
+
+ <!--Footer-->
+ <footer>
+    <div class="container-fluid padding">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="{% static 'images/logo.png' %}">
+        <hr class="light">
+        <p>+2348122213918</p>
+        <p>alaoadebukola6@gmail.com</p>
+        <p>Asaba, Delta state</p>
+
+      </div>
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Our Hours</h5>
+        <hr class="light">
+        <p>Mondays-Fridays: 8am-5pm</p>
+        <p>Saturdays: 9-2pm</p>
+        <p>Sundays: closed</p>
+      </div>
+
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Service Area</h5>
+        <hr class="light">
+        <p>Asaba, Delta state</p>
+        <p>Omoku, Rivers state</p>
+        <p>Ile-Ife, Osun state</p>
+      </div>
+
+      <div class="col-12">
+        <hr class="light-100">
+        <h5>&copy; w3newbie.com</h5>
+      
+
+      </div>
+   
+    </div>
+
+    </div>
+  </footer>
+  
+
+
+{% endblock %}

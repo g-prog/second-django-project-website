@@ -1,0 +1,152 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css", href="{% static 'bootstrap/font-awesome/css' %}"/>
+    <title></title>
+
+
+  </head>
+  <body style="background-color:white;">
+
+    
+    <!--<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>--->
+  
+  
+  
+   <!--- <ul>
+        <li><a href={% url 'home' %}>Home</a></li>
+        <li><a href={% url 'news' %}>News</a></li>
+        <li><a href={% url 'contact' %}>Contact</a></li>
+        <li><a href={% url 'newsdate' 2020 %}>newsdate</a></li>
+        <li><a href={% url 'register' %}>Signup</a></li>
+        <li><a href={% url 'modalform' %}>Modal Form</a></li>
+    </ul>-->
+
+    
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class = "container-fluid">
+        <a class = "navbar-brand" href = "#"><img src= "{% static 'images/logo.png' %}" > </a>
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            {% if user.is_authenticated %}
+           <li style="padding-top: 9px;">Welcome, {{user.username}}</li>
+            <a class="nav-link" href="{% url 'logout'  %}"style=" color:purple;">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}" style=" color:purple;">Login</a>
+          </li>
+          {% else %}
+  
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login2' %}" style=" color:purple;">Login</a>
+          </li>
+          
+          
+          
+          <!--<li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}"style="color:purple;">Register</a>
+          </li>-->
+          
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}"style=" color:purple;">Home <span class="sr-only">(current)</span></a>
+          </li>
+         <!--<li class="nav-item">
+            <a class="nav-link" href="{% url 'news' %}" style=" color:purple;">News</a>
+          </li>-->
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}" style=" color:purple;">Contact</a>
+          </li>
+          <!--<li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}"style="color:purple;">Register</a>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'modalform' %}"style=" color:purple;">Sign-up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'newsdate' 2020 %}"style=" color:purple;">Newsdate</a>
+          </li>
+
+          
+
+   
+
+          
+    
+          
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          
+          <input class="form-control mr-sm-2" type="search" placeholder="Search news by year">
+          <a href="{%  url 'newsdate' 2020 %}"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></a>
+          <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="font-size: 16px;">Search</button>-->
+        </form>
+      </div>
+    </nav>
+  
+   <!--Footer-->
+   <!--<footer>
+    <div class="container-fluid padding">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="{% static 'images/logo.png' %}">
+        <hr class="light">
+        <p>+2348122213918</p>
+        <p>alaoadebukola6@gmail.com</p>
+        <p>Asaba, Delta state</p>
+
+      </div>
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Our Hours</h5>
+        <hr class="light">
+        <p>Mondays-Fridays:8am-5pm</p>
+        <p>Saturdays: 9-2pm</p>
+        <p>Sundays:closed</p>
+      </div>
+
+      <div class="col-md-4">
+        <hr class="light">
+        <h5>Service Area</h5>
+        <hr class="light">
+        <p>Asaba, Delta state</p>
+        <p>Omoku, Rivers state</p>
+        <p>Ile-Ife, Osun state</p>
+      </div>
+
+      <div class="col-12">
+        <hr class="light-100">
+        <h5>&copy; w3newbie.com</h5>
+      
+
+      </div>
+   
+    </div>
+
+    </div>
+  </footer>--->
+      
+  </body>
